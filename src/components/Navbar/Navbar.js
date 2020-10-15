@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdRestaurantMenu } from 'react-icons/md'
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Button } from '../Button/Button';
 import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
 
@@ -52,23 +51,8 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <NavLink to='/meals/new' className='nav-links' onClick={closeMobileMenu}>
-              Add Meal
+              Add meal
             </NavLink>
-          </li>
-          <li className='nav-btn'>
-            {button ? (
-              <NavLink to='/sign-up' className='btn-link'>
-                <Button buttonStyle='btn--outline'>
-                  Sign Up
-                  </Button>
-              </NavLink>
-            ):(
-              <NavLink to='/sign-up' className='btn-link'>
-                <Button buttonStyle='btn--outline' buttonSize='btn--mobile' onClick={closeMobileMenu}>
-                  Sign Up
-                  </Button>
-              </NavLink>
-            )}
           </li>
         </ul>
       </div>

@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import MealCard from './CardUI';
+import MealCard from '.././components/Card/MealCard';
 import { connect } from 'react-redux'
-
-// import breakfast from '../assets/breakfast.jpeg';
-// import lunch from '../assets/lunch.jpeg';
-// import dinner from '../assets/dinner.jpg';
 
 class MealsList extends Component {
   render () {
@@ -15,12 +11,13 @@ class MealsList extends Component {
       const meals = this.props.meals.map ((meal, i) =>{
         return (
           <div className="col-md-4">
-            <MealCard key={i} 
+            <MealCard 
+            key={meal.id} 
             name={meal.name} 
             category={meal.category} 
             description={meal.description}
             imgsrc={meal.image}
-            vegan={meal.vegan ? true: true || meal.vegan ? false: false}
+            vegan={meal.vegan}
             contains_nuts={meal.contains_nuts}
             contains_dairy={meal.contains_dairy}
             />

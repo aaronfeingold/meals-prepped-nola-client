@@ -3,9 +3,9 @@ import './card-style.css'
 
 const MealCard = props => {
   return(
-    <div className='card text-center shadow' key={props.key}>
+    <div className='card text-center shadow' >
       <div className="overflow">
-        <img src={props.imgsrc} className="card-img-top"/>
+        <img src={props.imgsrc} alt={`${props.name}`} className="card-img-top"/>
       </div>
       <div className="card-body text-dark">
         <h4 className="card-title">
@@ -18,16 +18,16 @@ const MealCard = props => {
           Description: {props.description}
         </p>
         <p className="card-text text-secondary">
-          Vegan?: {`${props.vegan ? true:true}` || `${props.vegan ? false:false}`}
+          {props.vegan ? "Vegan" : " "}
         </p>
         <p className="card-text text-secondary">
-          Contains Nuts?: {props.contains_nuts}
+          {props.contains_nuts ? "Contains Nuts" : " "}
         </p>
         <p className="card-text text-secondary">
-          Contains Dairy?: {props.contains_dairy}
+          {props.contains_dairy ? "Contains Dairy" : " "}
         </p>
-        <a href="#" className="btn btn-outline-success">
-          Add to Order
+        <a href="/ingredients" className="btn btn-outline-success">
+          See Ingredients
         </a>
       </div>
     </div>

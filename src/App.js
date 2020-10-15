@@ -7,9 +7,8 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer.js'
 import Home from './components/HomePage/Home.js'
-import MealsList from './containers/Cards/Cards.js'
-import MealForm from './containers/Form/MealForm.js'
-import { render } from 'react-dom';
+import MealsList from './containers/MealsList.js'
+import MealFormContainer from './containers/MealFormContainer.js'
 import { fetchMeals } from './actions/meals';
 
 class App extends Component {
@@ -25,8 +24,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/'component={Home}/>
             <Route exact path='/meals' component={MealsList}/>
-            <Route exact path='/meals/new' component={MealForm}/>
-            <Route exact path='/meals/:id' />
+            <Route exact path='/meals/new' component={MealFormContainer}/>
             <Route path='/sign-up'  />
           </Switch>
           <Footer />
