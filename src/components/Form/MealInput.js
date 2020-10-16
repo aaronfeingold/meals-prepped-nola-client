@@ -4,8 +4,8 @@ import { createMeal } from '../.././actions/meals.js'
 
 export class MealInput extends Component {
     state = {
-      name: '',
-      category: ''
+      name: "",
+      category: ""
     }
   
     handleOnChange(e) {
@@ -28,11 +28,11 @@ export class MealInput extends Component {
           <form onSubmit={this.handleOnSubmit.bind(this)}>
             <div className="form-group">
               <label htmlFor="name">Name: </label>
-                <input type="text"  value={this.state.name} name="name" id="name" className="form-control" onChange={this.handleOnChange} />
+                <input type="text"  value={this.state.name} name="name" id="name" className="form-control" onChange={(event) => this.handleOnChange(event)} />
             </div>
             <div className="form-group">
               <label htmlFor="category">Category: </label>
-              <input type="text" value={this.state.category} name="category" className="form-control" onChange={this.handleOnChange} />
+              <input type="text" value={this.state.category} name="category" id="category" className="form-control" onChange={(event) => this.handleOnChange(event)} />
             </div>
               <button type="submit" value="Create Meal" className="btn btn-primary btn-lg">Create Meal</button>
           </form>
@@ -44,4 +44,4 @@ export class MealInput extends Component {
 
 // const mapDispatchToProps = dispatch => ({ addMeal: formData => dispatch({ type: 'ADD_MEAL', formData }) })
 
-export default connect(null, { createMeal })(MealInput)
+export default connect(null, { createMeal })(MealInput);

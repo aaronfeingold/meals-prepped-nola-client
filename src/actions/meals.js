@@ -22,7 +22,7 @@ export const fetchMeals = () => {
   };
 }
 
-export const createMeal = (mealData, history) => {
+export const createMeal = (mealData, browserHistory) => {
   return (dispatch) => {
       fetch('http://localhost:3001/meals', {
           method: "POST",
@@ -35,7 +35,7 @@ export const createMeal = (mealData, history) => {
           .then( resp => resp.json() )
           .then( meal => {
               dispatch(addMeal(meal))
-              history.push('/meals')
+              browserHistory.push('/meals')
           })
   }
 }
