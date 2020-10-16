@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdRestaurantMenu } from 'react-icons/md'
 import { FaBars, FaTimes } from 'react-icons/fa';

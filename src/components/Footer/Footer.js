@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import { Button } from '.././Button/Button.js';
 import { Link } from 'react-router-dom';
 import { FaLinkedin } from 'react-icons/fa';
 import { MdRestaurantMenu } from 'react-icons/md';
@@ -23,7 +22,7 @@ function Footer() {
               type='email'
               placeholder='Your Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <button className="btn-primary">Subscribe</button>
           </form>
         </div>
       </section>
@@ -53,7 +52,7 @@ function Footer() {
           <div className='social-icons'>
             <Link
               className='social-icon-link'
-              to='/'
+              to='https://www.linkedin.com/in/aaron-feingold-1a76ba1b4/'
               target='_blank'
               aria-label='LinkedIn'
             >
