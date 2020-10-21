@@ -9,6 +9,13 @@ const addMeal = (meal) => {
   }
 }
 
+const deleteMealFromMeals = (mealId) => {
+  return {
+    type: "DELETE_MEAL",
+    mealId
+  }
+}
+
 export const fetchMeals = () => {
 
   return (dispatch) => {
@@ -16,7 +23,6 @@ export const fetchMeals = () => {
 
     fetch(BASE_URL + "/meals")
       .then((resp) => resp.json())
-
       .then((meals) => dispatch({ type: "LOAD_MEALS", meals }));
   };
 }
@@ -34,20 +40,25 @@ export const createMeal = (mealData, history) => {
           .then( resp => resp.json() )
           .then( meal => {
               dispatch(addMeal(meal));
-              console.log(history);
               history.push('/meals');
           })
   }
 }
 
-export const deleteMeal = (id, history) => {
-  console.log(history)
+export const deleteMeal = (mealId, history) => {
   return (dispatch) => {
-      fetch(`http://localhost:3001/meals/${id}`, {
-        method: 'DELETE'
+      fetch(`http://localhost:3001/meals/${mealId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
       })
       .then(resp => {
-        dispatch({type: "DELETE_MEAL", payload: id});
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(deleteMealFromMeals(mealId))
+        }
       });
   };
 };

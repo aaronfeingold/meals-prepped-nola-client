@@ -10,6 +10,7 @@ class MealsList extends Component {
     else {
       const mealsList = this.props.meals.map ((meal, i) =>{
         return (
+
           <div className="col-md-4">
             <MealCard 
             key={i}
@@ -27,9 +28,14 @@ class MealsList extends Component {
       })
 
       return(
-        <div className="container-fluid d-flex justify-content-center">
-          <div className="row">
-            { mealsList }
+        <div>
+          <span className="align-middle">
+            <h1 className="text-center">All Meals</h1>
+          </span>
+          <div className="container-fluid d-flex justify-content-center">
+            <div className="row">
+              { mealsList }
+            </div>
           </div>
         </div>
       );

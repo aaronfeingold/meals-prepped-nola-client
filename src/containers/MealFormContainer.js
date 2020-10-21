@@ -7,6 +7,7 @@ class MealFormContainer extends Component {
   render() {
     return (
       <div className="container">
+        <h3>Add Meal</h3>
         <MealInput />
       </div>
     )

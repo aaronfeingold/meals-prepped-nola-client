@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { deleteMeal } from '../.././actions/meals.js'
+import { deleteMeal } from '../../actions/meals.js'
 
 export class DeleteButton extends Component {
 
