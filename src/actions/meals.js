@@ -45,9 +45,9 @@ export const createMeal = (mealData, history) => {
   }
 }
 
-export const deleteMeal = (mealId, history) => {
+export const deleteMeal = (mealId) => {
   return (dispatch) => {
-      fetch(`http://localhost:3001/meals/${mealId}`, {
+      fetch(BASE_URL + '/meals/' + mealId, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"
