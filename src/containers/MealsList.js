@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 class MealsList extends Component {
   render () {
     if (this.props.loading) {
-      return <div>Loading...</div>
+      return <div>Loading info from backend...</div>
     } else {
 
       const meals = this.props.meals.map ((meal, i) =>{

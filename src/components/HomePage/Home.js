@@ -4,6 +4,7 @@ function Home() {
   return (
     <div>
       <h4>Welcome to PREPPED-NOLA</h4>
+      <p>This is an app to help you organize your weekly meals</p>
     </div>
   );
 }

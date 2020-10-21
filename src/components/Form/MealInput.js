@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 import { createMeal } from '../.././actions/meals.js'
 
@@ -16,11 +17,11 @@ export class MealInput extends Component {
   
     handleOnSubmit(e) {
       e.preventDefault();
-      const meal = {
+      const mealData = {
         meal: this.state
       };
 
-      this.props.createMeal(meal, this.props.history);
+      this.props.createMeal(mealData, this.props.history);
     };
   
     render() {
@@ -40,8 +41,4 @@ export class MealInput extends Component {
     };
 };
 
-// const mapStateToProps = ({ meals }) => ({ meals })
-
-// const mapDispatchToProps = dispatch => ({ addMeal: formData => dispatch({ type: 'ADD_MEAL', formData }) })
-
-export default connect(null, { createMeal })(MealInput);
+export default withRouter(connect(null, { createMeal })(MealInput));

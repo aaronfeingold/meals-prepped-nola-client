@@ -1,4 +1,3 @@
-
 const BASE_URL = "http://localhost:3001";
 
 const LOADING = { type: "LOADING" };
@@ -22,7 +21,7 @@ export const fetchMeals = () => {
   };
 }
 
-export const createMeal = (mealData, browserHistory) => {
+export const createMeal = (mealData, history) => {
   return (dispatch) => {
       fetch('http://localhost:3001/meals', {
           method: "POST",
@@ -34,8 +33,8 @@ export const createMeal = (mealData, browserHistory) => {
       })
           .then( resp => resp.json() )
           .then( meal => {
-              dispatch(addMeal(meal))
-              browserHistory.push('/meals')
+              dispatch(addMeal(meal));
+              history.push('/meals');
           })
   }
 }

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux'
 
+import history from './history';
+
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer.js'
@@ -19,7 +21,7 @@ class App extends Component {
 
     render() {
       return (
-        <Router >
+        <Router history={history}>
           <Navbar />
           <Switch>
             <Route exact path='/'component={Home}/>
