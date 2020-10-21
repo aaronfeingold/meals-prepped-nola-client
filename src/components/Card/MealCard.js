@@ -1,7 +1,10 @@
 import React from 'react';
+import DeleteButton from '.././Button/DeleteButton.js'
 import './card-style.css'
 
+
 const MealCard = props => {
+
   return(
     <div className='card text-center shadow' >
       <div className="overflow">
@@ -26,9 +29,7 @@ const MealCard = props => {
         <p className="card-text text-secondary">
           {props.contains_dairy ? "Contains Dairy" : " "}
         </p>
-        <a href="/ingredients" className="btn btn-outline-success">
-          See Ingredients
-        </a>
+        <DeleteButton  deleteMeal={props.deleteMeal} id={props.id}/>
       </div>
     </div>
   );

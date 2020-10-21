@@ -23,7 +23,7 @@ export const fetchMeals = () => {
 
 export const createMeal = (mealData, history) => {
   return (dispatch) => {
-      fetch('http://localhost:3001/meals', {
+      fetch(BASE_URL + "/meals", {
           method: "POST",
           headers: {
               'Accept': 'application/json',
@@ -34,7 +34,20 @@ export const createMeal = (mealData, history) => {
           .then( resp => resp.json() )
           .then( meal => {
               dispatch(addMeal(meal));
+              console.log(history);
               history.push('/meals');
           })
   }
 }
+
+export const deleteMeal = (id, history) => {
+  console.log(history)
+  return (dispatch) => {
+      fetch(`http://localhost:3001/meals/${id}`, {
+        method: 'DELETE'
+      })
+      .then(resp => {
+        dispatch({type: "DELETE_MEAL", payload: id});
+      });
+  };
+};

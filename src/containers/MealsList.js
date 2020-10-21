@@ -5,14 +5,15 @@ import { connect } from 'react-redux'
 class MealsList extends Component {
   render () {
     if (this.props.loading) {
-      return <div>Loading info from backend...</div>
-    } else {
-
-      const meals = this.props.meals.map ((meal, i) =>{
+        return <div>Loading info from backend...</div>
+      } 
+    else {
+      const mealsList = this.props.meals.map ((meal, i) =>{
         return (
           <div className="col-md-4">
             <MealCard 
-            key={meal.id} 
+            key={i}
+            id={meal.id}
             name={meal.name} 
             category={meal.category} 
             description={meal.description}
@@ -28,13 +29,17 @@ class MealsList extends Component {
       return(
         <div className="container-fluid d-flex justify-content-center">
           <div className="row">
-            { meals }
+            { mealsList }
           </div>
         </div>
       );
     }
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  deleteMeal: id => dispatch ({type: "DELETE_MEAL", id})
+})
 
 const mapStateToProps = state => {
   return {
@@ -43,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(MealsList);
+export default connect(mapStateToProps, mapDispatchToProps)(MealsList);
