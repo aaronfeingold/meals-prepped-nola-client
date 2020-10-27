@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
-import { createMeal } from '../.././actions/meals.js'
+import { createMeal } from '../../actions/mealsActions.js'
 
 export class MealInput extends Component {
     state = {
@@ -19,13 +19,13 @@ export class MealInput extends Component {
     };
 
     handleOnSelect(e) {
-      if (this.state.vegan = false) {
+      if (this.state.vegan === false) {
         this.setState({
-          [e.target.name]: true
+          vegan: true
       })
-    } if (this.state.vegan = true) {
+    } if (this.state.vegan === true) {
         this.setState({
-          [e.target.name]: false
+          vegan: false
         })
       }
     }
@@ -54,15 +54,15 @@ export class MealInput extends Component {
               <label htmlFor="description">Description: </label>
               <textarea value={this.state.description} className="form-control" name="description"id="description" rows="3" onChange={(event) => this.handleOnChange(event)}></textarea>
             </div>
-            <div className="form-group form-check">
-              <input type="checkbox" value={this.state.vegan} className="form-check-input" name="vegan" id="vegan" onChange={(event) => this.handleOnSelect(event)} />
-              <label className="form-check-label" >Vegan</label>
-            </div>
             <div className="form-group">
               <label htmlFor="image">Image URL: </label>
                 <input type="text"  value={this.state.image} name="image" id="image" className="form-control" onChange={(event) => this.handleOnChange(event)} />
             </div>
-              <button type="submit" value="Create Meal" className="btn btn-primary btn-lg">Create Meal</button>
+            <div className="form-group form-check">
+              <input type="checkbox" value={this.state.vegan} className="form-check-input" name="vegan" id="vegan" onChange={(event) => this.handleOnSelect(event)} />
+              <label className="form-check-label" >Vegan</label>
+            </div>
+              <button type="submit" value="Create Meal" className="btn btn-outline-success btn-lg">Create Meal</button>
           </form>
       );
     };

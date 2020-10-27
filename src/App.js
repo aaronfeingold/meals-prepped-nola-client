@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer.js'
 import Home from './components/HomePage/Home.js'
 import MealsList from './containers/MealsList.js'
 import MealFormContainer from './containers/MealFormContainer.js'
-import { fetchMeals } from './actions/meals';
+import { fetchMeals } from './actions/mealsActions';
 
 class App extends Component {
 
@@ -27,7 +27,6 @@ class App extends Component {
             <Route exact path='/'component={Home}/>
             <Route exact path='/meals' component={MealsList}/>
             <Route exact path='/meals/new' component={MealFormContainer}/>
-            <Route path='/sign-up'  />
           </Switch>
           <Footer />
         </Router> 

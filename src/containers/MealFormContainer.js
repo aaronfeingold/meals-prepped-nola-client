@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import MealInput from '.././components/Form/MealInput';
+import MealInput from '../components/Forms/MealInput';
 
 
 class MealFormContainer extends Component {

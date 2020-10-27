@@ -3,34 +3,19 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import { FaLinkedin } from 'react-icons/fa';
 import { MdRestaurantMenu } from 'react-icons/md';
+import SubscriptionInput from '.././Forms/SubscriptionInput';
 
 function Footer() {
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
-        <p className='footer-subscription-heading'>
-          Email Subscription Coming soon!
-        </p>
-        <p className='footer-subscription-text'>
-          You can unsubscribe at any time.
-        </p>
-        <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-            <button className="btn-primary">Subscribe</button>
-          </form>
-        </div>
+      <SubscriptionInput />
       </section>
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>About Us</h2>
-            <Link to='/sign-up'>How it works</Link>
+            <Link to='/'>How it works</Link>
           </div>
           <div className='footer-link-items'>
             <h2>Contact Us</h2>
@@ -50,14 +35,9 @@ function Footer() {
           </div>
           <small className='website-rights'>Aaron Feingold © 2020</small>
           <div className='social-icons'>
-            <Link
-              className='social-icon-link'
-              to='https://www.linkedin.com/in/aaron-feingold-1a76ba1b4/'
-              target='_blank'
-              aria-label='LinkedIn'
-            >
+            <a className='social-icon-link' target='_blank' href='https://www.linkedin.com/in/aaron-feingold-1a76ba1b4/' aria-label='LinkedIn'>
               <FaLinkedin />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
