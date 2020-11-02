@@ -1,5 +1,5 @@
 import React from 'react';
-import DeleteButton from '../Buttons/DeleteButton.js'
+import DeleteMealButton from '../Buttons/DeleteMealButton.js'
 import MealDescription from './MealDescription.js'
 import './card-style.css'
 
@@ -28,7 +28,7 @@ const MealCard = props => {
         <p className="card-text text-secondary">
           {props.contains_dairy ? "Contains Dairy" : " "}
         </p>
-        <DeleteButton  deleteMeal={props.deleteMeal} id={props.id}/>
+        <DeleteMealButton  deleteMeal={props.deleteMeal} id={props.id}/>
       </div>
     </div>
   );

@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
-import MealCard from '.././components/Card/MealCard';
+import MealCard from '../components/Card/MealCard';
 import { connect } from 'react-redux'
 
-class MealsList extends Component {
+import cuid from 'cuid';
+export const cuidFn = cuid;
+
+class MealsListContainer extends Component {
+
   render () {
     if (this.props.loading) {
-        return <div>Loading info from backend...</div>
+        return <div>Loading info from backend server...</div>
       } 
     else {
-      const mealsList = this.props.meals.map ((meal, i) =>{
+      const mealsList = this.props.meals.map ((meal) =>{
         return (
 
           <div className="col-md-4">
             <MealCard 
-            key={i}
+            key={cuidFn}
             id={meal.id}
             name={meal.name} 
             category={meal.category} 
@@ -54,4 +58,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MealsList);
+export default connect(mapStateToProps, mapDispatchToProps)(MealsListContainer);

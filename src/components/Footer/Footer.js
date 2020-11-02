@@ -35,7 +35,7 @@ function Footer() {
           </div>
           <small className='website-rights'>Aaron Feingold © 2020</small>
           <div className='social-icons'>
-            <a className='social-icon-link' target='_blank' href='https://www.linkedin.com/in/aaron-feingold-1a76ba1b4/' aria-label='LinkedIn'>
+            <a className='social-icon-link' target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/aaron-feingold-1a76ba1b4/' aria-label='LinkedIn'>
               <FaLinkedin />
             </a>
           </div>

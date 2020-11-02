@@ -24,7 +24,8 @@ export class MealInput extends Component {
           vegan: true
       })
     } if (this.state.vegan === true) {
-        this.setState({
+        this.setState(
+        {
           vegan: false
         })
       }
@@ -35,8 +36,9 @@ export class MealInput extends Component {
       const mealData = {
         meal: this.state
       };
-
+      console.log('a')
       this.props.createMeal(mealData, this.props.history);
+      console.log('h')
     };
   
     render() {
@@ -50,7 +52,7 @@ export class MealInput extends Component {
               <label htmlFor="category">Category: </label>
               <input type="text" value={this.state.category} name="category" id="category" className="form-control" onChange={(event) => this.handleOnChange(event)} />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label htmlFor="description">Description: </label>
               <textarea value={this.state.description} className="form-control" name="description"id="description" rows="3" onChange={(event) => this.handleOnChange(event)}></textarea>
             </div>

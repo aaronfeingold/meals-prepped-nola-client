@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:3001";
 const LOADING = { type: "LOADING" };
 
 const addMeal = (meal) => {
+  console.log('e')
   return {
       type: "ADD_MEAL",
       meal
@@ -28,7 +29,9 @@ export const fetchMeals = () => {
 }
 
 export const createMeal = (mealData, history) => {
+  console.log('b')
   return (dispatch) => {
+    console.log('c')
       fetch(BASE_URL + "/meals", {
           method: "POST",
           headers: {
@@ -39,9 +42,11 @@ export const createMeal = (mealData, history) => {
       })
           .then( resp => resp.json() )
           .then( meal => {
+              console.log('d')
               dispatch(addMeal(meal));
               history.push('/meals');
           })
+        console.log('f')
   }
 }
 
