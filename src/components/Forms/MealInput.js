@@ -11,7 +11,7 @@ export class MealInput extends Component {
       vegan: false,
       image: ""
     }
-  
+   
     handleOnChange(e) {
       this.setState({
         [e.target.name]: e.target.value
@@ -31,7 +31,7 @@ export class MealInput extends Component {
       }
     }
   
-    handleOnSubmit(e) {
+    handleOnSubmit = (e) => {
       e.preventDefault();
       const mealData = {
         meal: this.state
@@ -43,7 +43,7 @@ export class MealInput extends Component {
   
     render() {
       return (
-          <form onSubmit={this.handleOnSubmit.bind(this)}>
+          <form onSubmit={this.handleOnSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name: </label>
                 <input type="text"  value={this.state.name} name="name" id="name" className="form-control" onChange={(event) => this.handleOnChange(event)} />
