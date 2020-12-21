@@ -4,7 +4,7 @@ import MealDescription from './MealDescription.js'
 import './card-style.css'
 
 
-const MealCard = props => {
+function MealCard(props) {
 
   return(
     <div className='card text-center shadow' >

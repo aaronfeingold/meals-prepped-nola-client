@@ -9,7 +9,8 @@ export class MealInput extends Component {
       category: "",
       description: "",
       vegan: false,
-      image: ""
+      image: "",
+      errors: {},
     }
    
     handleOnChange(e) {
@@ -33,13 +34,14 @@ export class MealInput extends Component {
   
     handleOnSubmit = (e) => {
       e.preventDefault();
-      const mealData = {
-        meal: this.state
+      if (this.validateForm()) {
+        const mealData = {
+          meal: this.state
+        };
+        console.log('a')
+        this.props.createMeal(mealData, this.props.history);
+        console.log('h')}
       };
-      console.log('a')
-      this.props.createMeal(mealData, this.props.history);
-      console.log('h')
-    };
   
     render() {
       return (
@@ -47,6 +49,7 @@ export class MealInput extends Component {
             <div className="form-group">
               <label htmlFor="name">Name: </label>
                 <input type="text"  value={this.state.name} name="name" id="name" className="form-control" onChange={(event) => this.handleOnChange(event)} />
+              <div className="errorMsg">{this.state.errors.name}</div>
             </div>
             <div className="form-group">
               <label htmlFor="category">Category: </label>
@@ -68,6 +71,21 @@ export class MealInput extends Component {
           </form>
       );
     };
+    validateForm = () => {
+    
+      let formIsValid = true
+      let errors = {}
+    
+    if (!this.state.name) {
+      formIsValid = false
+      errors['name'] = '*Please enter a name for this meal'
+    }
+    
+    this.setState({ errors })
+    
+    return formIsValid
+    }
 };
+
 
 export default withRouter(connect(null, { createMeal })(MealInput));

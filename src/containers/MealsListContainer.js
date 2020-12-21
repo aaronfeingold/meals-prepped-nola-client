@@ -57,7 +57,7 @@ class MealsListContainer extends Component {
           <span className="align-middle">
             <h1 className="text-center">All Meals</h1>
             <div className="container-fluid d-flex justify-content-center" >
-              <label htmlFor="name">Search by Name: </label>
+              <label htmlFor="name">Search by Name: </label> 
               <input type="text" id="filter" value={this.state.mealFilter} onChange={this.handleSearch} />
             </div>
           </span>
