@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
 
 const LOADING = { type: "LOADING" };
 
