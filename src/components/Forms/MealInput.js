@@ -48,6 +48,22 @@ export class MealInput extends Component {
       };
   
     render() {
+
+      const createOrUpdate = () => {    
+        if (this.state.editing) {
+          return (
+            <div>
+              <button type="submit" value="Update Meal" className="btn btn-outline-success btn-lg"> Update </button>
+            </div>
+          )
+        } else {
+          return (
+            <div>
+              <button type="submit" value="Create Meal" className="btn btn-outline-success btn-lg"> Submit </button>
+            </div>
+          )
+        }      
+      }
       
       return (
           <form onSubmit={this.handleOnSubmit}>
@@ -73,7 +89,9 @@ export class MealInput extends Component {
                 <input type="checkbox" value={this.state.vegan} className="form-check-input" name="vegan" id="vegan" onChange={(event) => this.handleOnSelect(event)} />
                 <label className="form-check-label" >Vegan</label>
               </div>
-                <button type="submit" value="Create Meal" className="btn btn-outline-success btn-lg"> Create </button>
+                <div>
+                  { createOrUpdate }
+                </div>
             </div>
           </form>
       );
