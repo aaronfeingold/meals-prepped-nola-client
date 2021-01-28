@@ -73,7 +73,8 @@ class MealsListContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  deleteMeal: id => dispatch ({type: "DELETE_MEAL", id})
+  deleteMeal: id => dispatch ({type: "DELETE_MEAL", id}),
+  updateMeal: id => dispatch ({tyep: "UPDATE_MEAL", id})
 })
 
 const mapStateToProps = state => {

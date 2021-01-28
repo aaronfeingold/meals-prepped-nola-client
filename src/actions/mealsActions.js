@@ -1,4 +1,4 @@
-const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
+const BASE_URL = "http://localhost:3001";
 
 const LOADING = { type: "LOADING" };
 
@@ -17,9 +17,9 @@ const deleteMealFromMeals = (mealId) => {
   }
 }
 
-const editMealFromMeals = (mealId) => {
+const updateMealFromMeals = (mealId) => {
   return {
-    type: "EDIT_MEAL",
+    type: "UPDATE_MEAL",
     mealId
   }
 }
