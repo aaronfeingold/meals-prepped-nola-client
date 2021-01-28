@@ -29,6 +29,7 @@ function MealCard(props) {
           {props.contains_dairy ? "Contains Dairy" : " "}
         </p>
         <DeleteMealButton  deleteMeal={props.deleteMeal} id={props.id}/>
+        <EditMealButton  editMeal={props.editMeal} id={props.id}/>
       </div>
     </div>
   );

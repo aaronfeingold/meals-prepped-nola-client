@@ -17,6 +17,13 @@ const deleteMealFromMeals = (mealId) => {
   }
 }
 
+const editMealFromMeals = (mealId) => {
+  return {
+    type: "EDIT_MEAL",
+    mealId
+  }
+}
+
 export const fetchMeals = () => {
 
   return (dispatch) => {
