@@ -30,7 +30,8 @@ export class MealCard extends Component {
                 category={this.props.category} 
                 description={this.props.description} 
                 image={this.props.imgsrc} 
-                vegan={this.props.vegan} 
+                vegan={this.props.vegan}
+                id={this.props.id}
                 />
         </div>
       )

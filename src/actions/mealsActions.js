@@ -57,6 +57,10 @@ export const createMeal = (mealData, history) => {
   }
 }
 
+export const updateMeal = (mealId) => {
+
+}
+
 export const deleteMeal = (mealId) => {
   return (dispatch) => {
       fetch(BASE_URL + '/meals/' + mealId, {
