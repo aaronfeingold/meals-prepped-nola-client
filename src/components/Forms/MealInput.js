@@ -58,6 +58,7 @@ export class MealInput extends Component {
         this.setState({
           editing: false
         })
+        this.props.onEditingChange();
         this.props.updateMeal(this.props.id, mealData);
         console.log('h')}
       };

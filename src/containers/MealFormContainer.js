@@ -13,7 +13,8 @@ class MealFormContainer extends Component {
             <h3>Make Changes</h3>
           <br/>
         </div>
-        <MealInput 
+        <MealInput
+          onEditingChange={this.props.onEditingChange} 
           editing={this.props.editing} 
           name={this.props.name} 
           category={this.props.category} 
@@ -32,7 +33,7 @@ class MealFormContainer extends Component {
               <h3>Create a new Meal</h3>
             <br/>
           </div>
-          <MealInput 
+          <MealInput
             name={this.props.name} 
             category={this.props.category} 
             description={this.props.description} 

@@ -9,18 +9,31 @@ import './card-style.css'
 
 
 export class MealCard extends Component {
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      editing: false
+    }
+  }
 
   handleEditing = () => {
-    console.log("hello")
-    setEditing();
+    this.setState ({
+      editing: true
+    })
+  }
+  handleEditingChange = () => {
+    this.setState ({
+      editing: false
+    })
   }
 
   render() {
-    if (this.props.editing) {
+    if (this.state.editing) {
       return (
         <div className='card text-center shadow' >
                 < MealFormContainer
+                onEditingChange={this.handleEditingChange}
+                editing={this.state.editing}
                 name={this.props.name} 
                 category={this.props.category} 
                 description={this.props.description} 

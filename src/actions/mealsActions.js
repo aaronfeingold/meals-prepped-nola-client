@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:3001";
 
 const LOADING = { type: "LOADING" };
-const SET_EDITING = { type: "SET_EDITING"}
+const SET_EDITING = { type: "SET_EDITING" };
 
 const addMeal = (meal) => {
   console.log('e')
@@ -69,7 +69,7 @@ export const updateMeal = (mealId, mealData) => {
   console.log('b')
   return (dispatch) => {
     console.log('c')
-      fetch(BASE_URL + "/meals/" + {mealId}, {
+      fetch(BASE_URL + "/meals/" + `${mealId}`, {
           method: "PATCH",
           headers: {
               'Accept': 'application/json',

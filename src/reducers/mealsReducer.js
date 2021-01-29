@@ -11,7 +11,7 @@ export default (state=initialState, action) => {
     case "LOADING":
       return {...state, loading: true};
     case "SET_EDITING":
-      return {state, editing: true}
+      return {...state, editing: true}
     case "LOAD_MEALS":
       return {...state, loading: false, meals: action.meals};
     case "ADD_MEAL":
