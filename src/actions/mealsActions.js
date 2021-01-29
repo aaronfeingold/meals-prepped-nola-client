@@ -1,6 +1,7 @@
 const BASE_URL = "http://localhost:3001";
 
 const LOADING = { type: "LOADING" };
+const SET_EDITING = { type: "SET_EDITING"}
 
 const addMeal = (meal) => {
   console.log('e')
@@ -10,16 +11,16 @@ const addMeal = (meal) => {
   }
 }
 
-const deleteMealFromMeals = (mealId) => {
-  return {
-    type: "DELETE_MEAL",
+const updateMealCard = (mealId) => {
+  return{
+    type: "UPDATE_MEAL",
     mealId
   }
 }
 
-const updateMealFromMeals = (mealId) => {
+const deleteMealFromMeals = (mealId) => {
   return {
-    type: "UPDATE_MEAL",
+    type: "DELETE_MEAL",
     mealId
   }
 }
@@ -57,7 +58,31 @@ export const createMeal = (mealData, history) => {
   }
 }
 
-export const updateMeal = (mealId) => {
+export const setEditing = () => {
+  return (dispatch) => {
+    console.log("editing")
+    dispatch(SET_EDITING)
+  };
+}
+
+export const updateMeal = (mealId, mealData) => {
+  console.log('b')
+  return (dispatch) => {
+    console.log('c')
+      fetch(BASE_URL + "/meals/" + {mealId}, {
+          method: "PATCH",
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(mealData)
+      })
+          .then( resp => resp.json() )
+          .then( meal => {
+              dispatch(updateMealCard(meal));
+          })
+        console.log('f')
+  }
 
 }
 

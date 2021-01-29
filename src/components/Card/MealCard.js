@@ -1,31 +1,26 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux'
 import DeleteMealButton from '../Buttons/DeleteMealButton.js'
 import MealDescription from './MealDescription.js'
 import MealFormContainer from '../../containers/MealFormContainer.js'
+import { setEditing } from '../../actions/mealsActions.js'
 import './card-style.css'
 
 
 export class MealCard extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      editing: false
-    }
-  }
 
-  handleEditing = (e) => {
-    this.setState({
-      editing: true
-    })
+  handleEditing = () => {
+    console.log("hello")
+    setEditing();
   }
 
   render() {
-    if (this.state.editing) {
+    if (this.props.editing) {
       return (
         <div className='card text-center shadow' >
-                < MealFormContainer 
-                editing={this.state.editing} 
+                < MealFormContainer
                 name={this.props.name} 
                 category={this.props.category} 
                 description={this.props.description} 
@@ -66,4 +61,4 @@ export class MealCard extends Component {
   }
 }
 
-export default MealCard;
+export default withRouter(connect(null, { setEditing })(MealCard));

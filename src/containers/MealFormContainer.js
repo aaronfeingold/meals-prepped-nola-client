@@ -33,7 +33,6 @@ class MealFormContainer extends Component {
             <br/>
           </div>
           <MealInput 
-            editing={this.props.editing} 
             name={this.props.name} 
             category={this.props.category} 
             description={this.props.description} 

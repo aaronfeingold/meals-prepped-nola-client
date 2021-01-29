@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
-import { createMeal } from '../../actions/mealsActions.js'
-import { updateMeal } from '../../actions/mealsActions.js'
+import { createMeal, updateMeal } from '../../actions/mealsActions.js'
+
 
 export class MealInput extends Component {
   constructor(props){
@@ -55,6 +55,9 @@ export class MealInput extends Component {
           meal: this.state
         };
         console.log('a')
+        this.setState({
+          editing: false
+        })
         this.props.updateMeal(this.props.id, mealData);
         console.log('h')}
       };
@@ -143,4 +146,4 @@ export class MealInput extends Component {
 };
 
 
-export default withRouter(connect(null, { createMeal })(MealInput));
+export default withRouter(connect(null, { createMeal, updateMeal })(MealInput));

@@ -25,7 +25,7 @@ class MealsListContainer extends Component {
     let filteredMeal = this.state.mealFilter.toLowerCase()
     return this.props.meals.filter ((meal) => 
       meal.name.toLowerCase().includes(filteredMeal) || meal.description.toLowerCase().includes(filteredMeal)
-    )
+    ).sort(function(a,b){return (a.id - b.id)})
   }
 
   render () {
@@ -57,8 +57,10 @@ class MealsListContainer extends Component {
           <span className="align-middle">
             <h1 className="text-center">All Meals</h1>
             <div className="container-fluid d-flex justify-content-center" >
-              <label htmlFor="name">Search by Name: </label> 
-              <input type="text" id="filter" value={this.state.mealFilter} onChange={this.handleSearch} />
+              <div className='card text-center shadow' >
+                <label htmlFor="Search">Search by Name: </label>
+                <input type="text" id="filter" value={this.state.mealFilter} onChange={this.handleSearch} />
+              </div>
             </div>
           </span>
           <div className="container-fluid d-flex justify-content-center">
