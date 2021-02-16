@@ -1,4 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Kitchen Fatigue? Here's a solution to help prep meals for the week, brought to you by home cooks from New Orleans!
+
+
+About: This app was made with the intention of having direct access to a free meal recipe database.
+
+
+Please feel free to visit at: https://meals-prepped-nola.netlify.app/ and the community of cooks spreading their knowledge. 
+
+
+Questions? Comments? Email ajfeingold88@gmail.com thanks
+
+
+
+
+FYI: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 ## Available Scripts
 
@@ -41,7 +55,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React s](https://reactjs.org/).
 
 ### Code Splitting
 
