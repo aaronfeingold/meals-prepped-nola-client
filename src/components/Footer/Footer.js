@@ -30,7 +30,7 @@ function Footer() {
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
               <MdRestaurantMenu className='navbar-icon' />
-              NOLA PREPPED
+              PREPPED NOLA
             </Link>
           </div>
           <small className='website-rights'>Aaron Feingold © 2020</small>
