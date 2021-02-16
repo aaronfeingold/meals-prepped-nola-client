@@ -4,7 +4,7 @@ Kitchen Fatigue? Here's a solution to help prep meals for the week, brought to y
 About: This app was made with the intention of having direct access to a free meal recipe database.
 
 
-Please feel free to visit at: https://meals-prepped-nola.netlify.app/ and the community of cooks spreading their knowledge. 
+Please feel free to visit at: https://meals-prepped-nola.netlify.app/ and contribute, too, to the community of cooks spreading their knowledge. 
 
 
 Questions? Comments? Email ajfeingold88@gmail.com thanks
