@@ -24,18 +24,18 @@ class MealsListContainer extends Component {
   filterMeals = () => {
     let filteredMeal = this.state.mealFilter.toLowerCase()
     return this.props.meals.filter ((meal) => 
-      meal.name.toLowerCase().includes(filteredMeal) || meal.description.toLowerCase().includes(filteredMeal)
+      meal.name.toLowerCase().includes(filteredMeal) || meal.description.toLowerCase().includes(filteredMeal) || meal.category.toLowerCase().includes(filteredMeal)
     ).sort(function(a,b){return (a.id - b.id)})
   }
 
   render () {
     if (this.props.loading) {
-        return <div>Loading info from backend server...</div>
+        return <div className="container">Loading info from backend server...this can take up to 30 seconds...</div>
       }
     else {
       const mealsList = this.filterMeals().map ((meal) => {
         return (
-
+      // many children - when editing from meal card, this is parent to meal form container, hence ability to call onEditingChange
           <div className="col-md-4">
             <MealCard 
             key={meal.id}

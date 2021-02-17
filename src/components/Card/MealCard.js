@@ -56,16 +56,12 @@ export class MealCard extends Component {
           <h5 className="card-title">
             {this.props.category}
           </h5>
-          <MealDescription description={this.props.description} />
-          <p className="card-text text-secondary">
-            {this.props.vegan ? "Vegan" : " "}
-          </p>
-          <p className="card-text text-secondary">
-            {this.props.contains_nuts ? "Contains Nuts" : " "}
-          </p>
-          <p className="card-text text-secondary">
-            {this.props.contains_dairy ? "Contains Dairy" : " "}
-          </p>
+          <MealDescription 
+            description={this.props.description} 
+            vegan={this.props.vegan}
+            nuts={this.props.contains_nuts}
+            dailry={this.props.contains_dairy}
+            />
           <DeleteMealButton  deleteMeal={this.props.deleteMeal} id={this.props.id}/>
           <button className="btn btn-outline-info" onClick={this.handleEditing}> Edit </button>
         </div>
