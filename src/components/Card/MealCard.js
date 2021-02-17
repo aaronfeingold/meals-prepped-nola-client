@@ -50,13 +50,9 @@ export class MealCard extends Component {
           <img src={this.props.imgsrc} alt={`${this.props.name}`} className="card-img-top"/>
         </div>
         <div className="card-body text-dark">
-          <h4 className="card-title">
-          {this.props.name}
-          </h4>
-          <h5 className="card-title">
-            {this.props.category}
-          </h5>
           <MealDescription 
+            name={this.props.name}
+            category={this.props.category}
             description={this.props.description} 
             vegan={this.props.vegan}
             nuts={this.props.contains_nuts}

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 import { createMeal, updateMeal } from '../../actions/mealsActions.js'
-import  MealFormUpdating  from './MealFormUpdating'
+import MealFormUpdating from './MealFormUpdating'
 import MealFormCreating from './MealFormCreating'
-
+// This input is for meal creating and update. deletion is handled by deleteMealButton
 
 export class MealInput extends Component {
   constructor(props){
@@ -27,6 +27,10 @@ export class MealInput extends Component {
     };
 
     handleOnSelect(e) {
+      // a poorly abstracted toggle. however, it suffices. 
+      // Yet, if there are many checkboxes, 
+      // do I need to do it for each case? 
+      // Yes, so I need to make this dynamic...
       if (this.state.vegan === false) {
         this.setState({
           vegan: true
@@ -38,7 +42,9 @@ export class MealInput extends Component {
         })
       }
     }
-  
+    
+    // console logging here to make sure asyc react is correct...
+    // handles creation of new object, dispatches to backend...
     handleOnCreate = (e) => {
       e.preventDefault();
       if (this.validateForm()) {
@@ -60,6 +66,8 @@ export class MealInput extends Component {
         this.setState({
           editing: false
         })
+        // onEdingChange is passed down from MealCard as Parent
+        // this is double to ensure that editing is no longer true in any state anywhere in application
         this.props.onEditingChange();
         this.props.updateMeal(this.props.id, mealData);
         console.log('h')}

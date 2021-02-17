@@ -21,6 +21,7 @@ class MealsListContainer extends Component {
 
   }
 
+  // this is functional, yes, but not DRY...
   filterMeals = () => {
     let filteredMeal = this.state.mealFilter.toLowerCase()
     return this.props.meals.filter ((meal) => 

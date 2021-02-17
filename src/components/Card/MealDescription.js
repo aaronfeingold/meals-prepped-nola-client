@@ -1,24 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class MealDescription extends Component {
-  render() {
+const MealDescription = (props) => {
+
     return (
       <div>
+        <h4 className="card-title">
+          {props.name}
+        </h4>
+        <h5 className="card-title">
+          {props.category}
+        </h5>
         <p className="card-text text-secondary">
-          Description: {this.props.description}
+          Description: {props.description}
         </p>
           <p className="card-text text-secondary">
-            {this.props.vegan ? "Vegan" : " "}
+            {props.vegan ? "Vegan" : " "}
           </p>
           <p className="card-text text-secondary">
-            {this.props.contains_nuts ? "Contains Nuts" : " "}
+            {props.contains_nuts ? "Contains Nuts" : " "}
           </p>
           <p className="card-text text-secondary">
-            {this.props.contains_dairy ? "Contains Dairy" : " "}
+            {props.contains_dairy ? "Contains Dairy" : " "}
           </p>
       </div>
     )
-  }
+
 }
 
 export default MealDescription
