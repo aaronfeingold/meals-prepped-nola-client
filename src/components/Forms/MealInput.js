@@ -48,19 +48,26 @@ export class MealInput extends Component {
     handleOnCreate = (e) => {
       e.preventDefault();
       if (this.validateForm()) {
+        const tempState = {...this.state};
+        delete tempState.errors;
+        delete tempState.editing;
         const mealData = {
-          meal: this.state
+          meal: tempState
         };
         console.log('a')
         this.props.createMeal(mealData, this.props.history);
         console.log('h')}
       };
-
+    // these two look earily similar, thus can be refactored into one.
+    // how exactly--will it require changing a lot of props now, and variables...
     handleOnUpdate =(e) => {
       e.preventDefault();
       if (this.validateForm()) {
+        const tempState = {...this.state};
+        delete tempState.errors;
+        delete tempState.editing;
         const mealData = {
-          meal: this.state
+          meal: tempState
         };
         console.log('a')
         this.setState({
@@ -80,8 +87,7 @@ export class MealInput extends Component {
               <MealFormUpdating
               handleOnUpdate={this.handleOnUpdate.bind(this)}
               handleOnChange={this.handleOnChange.bind(this)}
-              handleOnSelect={this.handleOnSelect.bind(this)}
-              name={this.state.name} 
+              handleOnSelect={this.handleOnSelect.bind(this)} 
               editing={this.state.editing} 
               name={this.state.name} 
               category={this.state.category} 
@@ -98,7 +104,6 @@ export class MealInput extends Component {
               handleOnCreate={this.handleOnCreate.bind(this)}
               handleOnChange={this.handleOnChange.bind(this)}
               handleOnSelect={this.handleOnSelect.bind(this)}
-              name={this.state.name} 
               editing={this.state.editing} 
               name={this.state.name} 
               category={this.state.category} 

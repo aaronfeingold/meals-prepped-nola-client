@@ -12,8 +12,7 @@ const MealFormCreating = (props) => {
             handleOnChange={props.handleOnChange}
             handleOnSelect={props.handleOnSelect}
             name={props.name} 
-            editing={props.editing} 
-            name={props.name} 
+            editing={props.editing}  
             category={props.category} 
             description={props.description} 
             image={props.image} 

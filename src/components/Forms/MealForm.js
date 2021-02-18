@@ -3,7 +3,7 @@ import React from 'react'
 const MealForm = (props) => {
   let vegan_message
     
-  if (props.vegan == true ){
+  if (props.vegan === true ){
     vegan_message = "This is Vegan, Select to Change"
   } else {
     vegan_message = "Not Vegan, Select To Change"

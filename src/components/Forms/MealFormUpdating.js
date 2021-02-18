@@ -13,7 +13,6 @@ const MealFormUpdating = (props) => {
             handleOnSelect={props.handleOnSelect}
             name={props.name} 
             editing={props.editing} 
-            name={props.name} 
             category={props.category} 
             description={props.description} 
             image={props.image} 
