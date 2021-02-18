@@ -6,7 +6,7 @@ const MealFormUpdating = (props) => {
 
     return (
       <form onSubmit={props.handleOnUpdate}>
-        <div className='card text-center shadow' >
+        <div className='card text-center shadow' id={props.id}>
           <MealForm 
             handleOnUpdate={props.handleOnUpdate}
             handleOnChange={props.handleOnChange}
