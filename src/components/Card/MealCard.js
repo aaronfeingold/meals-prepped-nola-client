@@ -17,12 +17,15 @@ export class MealCard extends Component {
   }
 
   handleEditing = () => {
-    document.getElementById(`${this.props.id}`).scrollIntoView()
+    let num = this.props.id
+    document.getElementById(num).scrollIntoView()
     this.setState ({
       editing: true
     })
   }
   handleEditingChange = () => {
+    let num = this.props.id
+    document.getElementById(num).scrollIntoView()
     this.setState ({
       editing: false
     })
@@ -46,7 +49,7 @@ export class MealCard extends Component {
       )
     }
     return(
-      <div className='card text-center shadow' id={this.props.id}>
+      <div className='card text-center shadow'>
         <div className="overflow">
           <img src={this.props.imgsrc} alt={`${this.props.name}`} className="card-img-top"/>
         </div>
