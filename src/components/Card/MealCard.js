@@ -34,7 +34,7 @@ export class MealCard extends Component {
   render() {
     if (this.state.editing) {
       return (
-        <div className='card text-center shadow' id={this.props.id}>
+        <div className='card text-center shadow'>
                 < MealFormContainer
                 onEditingChange={this.handleEditingChange}
                 editing={this.state.editing}
