@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useRef } from 'react'
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 import DeleteMealButton from '../Buttons/DeleteMealButton.js'
@@ -17,6 +17,7 @@ export class MealCard extends Component {
   }
 
   handleEditing = () => {
+    document.getElementById(`${this.props.id}`).scrollIntoView()
     this.setState ({
       editing: true
     })
@@ -26,7 +27,7 @@ export class MealCard extends Component {
       editing: false
     })
   }
-
+  
   render() {
     if (this.state.editing) {
       return (
@@ -45,7 +46,7 @@ export class MealCard extends Component {
       )
     }
     return(
-      <div className='card text-center shadow' >
+      <div className='card text-center shadow' id={this.props.id}>
         <div className="overflow">
           <img src={this.props.imgsrc} alt={`${this.props.name}`} className="card-img-top"/>
         </div>
