@@ -1,4 +1,4 @@
-import React, { Component, useRef } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 import DeleteMealButton from '../Buttons/DeleteMealButton.js'
@@ -18,25 +18,26 @@ export class MealCard extends Component {
 
   handleEditing = () => {
     let num = this.props.id
-    document.getElementById(num).scrollIntoView()
+    document.getElementById(num).scrollIntoView({ behavior: 'smooth' })
     this.setState ({
       editing: true
     })
   }
-  handleEditingChange = () => {
+  handleUpdateSubmit = () => {
     let num = this.props.id
-    document.getElementById(num).scrollIntoView()
+    document.getElementById(num).scrollIntoView({ behavior: 'smooth' })
     this.setState ({
       editing: false
     })
   }
   
   render() {
+ 
     if (this.state.editing) {
       return (
         <div className='card text-center shadow'>
                 < MealFormContainer
-                onEditingChange={this.handleEditingChange}
+                onUpdateSubmit={this.handleUpdateSubmit}
                 editing={this.state.editing}
                 name={this.props.name} 
                 category={this.props.category} 

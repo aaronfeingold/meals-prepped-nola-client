@@ -14,7 +14,7 @@ class MealFormContainer extends Component {
           <br/>
         </div>
         <MealInput
-          onEditingChange={this.props.onEditingChange} 
+          onUpdateSubmit={this.props.onUpdateSubmit} 
           editing={this.props.editing} 
           name={this.props.name} 
           category={this.props.category} 

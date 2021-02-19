@@ -60,7 +60,7 @@ export class MealInput extends Component {
       };
     // these two look earily similar, thus can be refactored into one.
     // how exactly--will it require changing a lot of props now, and variables...
-    
+
     handleOnUpdate =(e) => {
       e.preventDefault();
       if (this.validateForm()) {
@@ -76,7 +76,7 @@ export class MealInput extends Component {
         })
         // onEdingChange is passed down from MealCard as Parent
         // this is double to ensure that editing is no longer true in any state anywhere in application
-        this.props.onEditingChange();
+        this.props.onUpdateSubmit();
         this.props.updateMeal(this.props.id, mealData);
         console.log('h')}
       };
