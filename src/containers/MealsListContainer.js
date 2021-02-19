@@ -38,7 +38,7 @@ class MealsListContainer extends Component {
         return (
       // many children - when editing from meal card, this is parent to meal form container, hence ability to call onEditingChange
           <div className="col-md-4" id={meal.id}>
-            <MealCard 
+            <MealCard
             key={meal.id}
             id={meal.id}
             name={meal.name} 

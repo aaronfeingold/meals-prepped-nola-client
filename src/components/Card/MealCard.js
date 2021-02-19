@@ -15,7 +15,6 @@ export class MealCard extends Component {
       editing: false
     }
   }
-
   handleEditing = () => {
     let num = this.props.id
     document.getElementById(num).scrollIntoView({ behavior: 'smooth' })
@@ -30,7 +29,6 @@ export class MealCard extends Component {
       editing: false
     })
   }
-  
   render() {
  
     if (this.state.editing) {
