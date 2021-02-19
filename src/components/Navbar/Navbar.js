@@ -40,6 +40,11 @@ function Navbar() {
               Add meal
             </NavLink>
           </li>
+          <li className='nav-item'>
+            <NavLink to='/meals/planner' className='nav-links' onClick={closeMobileMenu}>
+              Create Weekly Planner
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>

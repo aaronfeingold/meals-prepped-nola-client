@@ -1,23 +1,23 @@
-// ####Development
-// const BASE_URL = "http://localhost:3001";
-// ####Production
-const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
+// for development use:
+const BASE_URL = "http://localhost:3001";
+// for production use:
+// const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
 
 const LOADING = { type: "LOADING" };
-const SET_EDITING = { type: "SET_EDITING" };
 
 const addMeal = (meal) => {
-  console.log('e')
+  console.log('g')
   return {
       type: "ADD_MEAL",
       meal
   }
 }
 
-const updateMealCard = (mealId) => {
+const updateMealCard = (updatedMeal) => {
+  console.log('g')
   return{
     type: "UPDATE_MEAL",
-    mealId
+    updatedMeal
   }
 }
 
@@ -53,22 +53,15 @@ export const createMeal = (mealData, history) => {
       })
           .then( resp => resp.json() )
           .then( meal => {
-              console.log('d')
+              console.log('f')
               dispatch(addMeal(meal));
               history.push('/meals');
           })
-        console.log('f')
+        console.log('d')
   }
 }
 
-export const setEditing = () => {
-  return (dispatch) => {
-    console.log("editing")
-    dispatch(SET_EDITING)
-  };
-}
-
-export const updateMeal = (mealId, mealData) => {
+export const updateMeal = (mealId, tempMeal) => {
   console.log('b')
   return (dispatch) => {
     console.log('c')
@@ -78,13 +71,14 @@ export const updateMeal = (mealId, mealData) => {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
           },
-          body: JSON.stringify(mealData)
+          body: JSON.stringify(tempMeal)
       })
           .then( resp => resp.json() )
-          .then( meal => {
-              dispatch(updateMealCard(meal));
+          .then( updatedMeal => {
+              console.log('f')
+              dispatch(updateMealCard(updatedMeal));
           })
-        console.log('f')
+        console.log('d')
   }
 
 }

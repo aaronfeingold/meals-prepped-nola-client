@@ -56,29 +56,31 @@ export class MealInput extends Component {
         };
         console.log('a')
         this.props.createMeal(mealData, this.props.history);
-        console.log('h')}
+        console.log('e')}
       };
     // these two look earily similar, thus can be refactored into one.
     // how exactly--will it require changing a lot of props now, and variables...
 
     handleOnUpdate =(e) => {
+      debugger;
       e.preventDefault();
       if (this.validateForm()) {
         const tempState = {...this.state};
         delete tempState.errors;
         delete tempState.editing;
-        const mealData = {
+        const tempMeal = {
           meal: tempState
         };
-        console.log('a')
-        this.setState({
-          editing: false
-        })
         // onEdingChange is passed down from MealCard as Parent
         // this is double to ensure that editing is no longer true in any state anywhere in application
+        console.log('calling onUpdateSubmit')
         this.props.onUpdateSubmit();
-        this.props.updateMeal(this.props.id, mealData);
-        console.log('h')}
+        // onUpdateSubmit basically only changes state.editing of parent (MealCard)
+        // back from to false, as we are no longer editing. now its up to the servers to do their async magics...
+        console.log('a')
+        this.props.updateMeal(this.props.id, tempMeal);
+        console.log('e')
+      }
       };
 
       

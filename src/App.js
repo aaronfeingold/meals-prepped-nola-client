@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer.js'
 import Home from './components/HomePage/Home.js'
 import MealsListContainer from './containers/MealsListContainer.js'
 import MealFormContainer from './containers/MealFormContainer.js'
+import MealPlannerContainer from './containers/MealPlannerContainer.js'
 import { fetchMeals } from './actions/mealsActions';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path='/'component={Home}/>
             <Route exact path='/meals' component={MealsListContainer}/>
             <Route exact path='/meals/new' component={MealFormContainer}/>
+            <Route exact path='/meals/planner' component={MealPlannerContainer}/>
           </Switch>
           <Footer />
         </Router> 

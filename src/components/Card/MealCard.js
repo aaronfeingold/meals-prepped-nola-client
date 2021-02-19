@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux'
 import DeleteMealButton from '../Buttons/DeleteMealButton.js'
 import EditMealButton from '../Buttons/EditMealButton'
 import MealDescription from './MealDescription.js'
 import MealFormContainer from '../../containers/MealFormContainer.js'
-import { setEditing } from '../../actions/mealsActions.js'
 import './card-style.css'
 
 // meal cards pass down handleEditing and onUpdateSubmit as props
-
+// it can handle updating and submiting a patch
 export class MealCard extends Component {
   constructor(props) {
     super(props)
@@ -27,6 +24,7 @@ export class MealCard extends Component {
   handleUpdateSubmit = () => {
     let num = this.props.id
     document.getElementById(num).scrollIntoView({ behavior: 'smooth' })
+    console.log('setting editing back to false')
     this.setState ({
       editing: false
     })
@@ -75,4 +73,4 @@ export class MealCard extends Component {
   }
 }
 
-export default withRouter(connect(null, { setEditing })(MealCard));
+export default MealCard;
