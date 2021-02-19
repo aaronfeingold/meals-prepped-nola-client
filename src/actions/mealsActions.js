@@ -1,5 +1,7 @@
-const BASE_URL = "http://localhost:3001";
-// const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
+// ####Development
+// const BASE_URL = "http://localhost:3001";
+// ####Production
+const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
 
 const LOADING = { type: "LOADING" };
 const SET_EDITING = { type: "SET_EDITING" };

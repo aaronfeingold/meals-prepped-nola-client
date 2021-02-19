@@ -27,7 +27,7 @@ export class MealInput extends Component {
     };
 
     handleOnSelect(e) {
-      // a poorly abstracted toggle. however, it suffices. 
+      // a poorly abstracted toggle. however, it suffices as a method. 
       // Yet, if there are many checkboxes, 
       // do I need to do it for each case? 
       // Yes, so I need to make this dynamic...
@@ -86,17 +86,17 @@ export class MealInput extends Component {
         if (this.state.editing === true ) {
           return (
               <MealFormUpdating
-              handleOnUpdate={this.handleOnUpdate.bind(this)}
-              handleOnChange={this.handleOnChange.bind(this)}
-              handleOnSelect={this.handleOnSelect.bind(this)} 
-              editing={this.state.editing} 
-              name={this.state.name} 
-              category={this.state.category} 
-              description={this.state.description} 
-              image={this.state.image} 
-              vegan={this.state.vegan}
-              id={this.state.id}
-              errors={this.state.errors}          
+                handleOnUpdate={this.handleOnUpdate.bind(this)}
+                handleOnChange={this.handleOnChange.bind(this)}
+                handleOnSelect={this.handleOnSelect.bind(this)} 
+                editing={this.state.editing} 
+                name={this.state.name} 
+                category={this.state.category} 
+                description={this.state.description} 
+                image={this.state.image} 
+                vegan={this.state.vegan}
+                id={this.state.id}
+                errors={this.state.errors}          
               />
           )
         } else {  
@@ -128,7 +128,9 @@ export class MealInput extends Component {
       errors['name'] = '*Please enter a name for this meal'
       document.querySelector('div.errorMsg').parentNode.scrollIntoView({ behavior: 'smooth' })
     }
-    
+    // ok, but if you only have one validation on front end
+    // and no validations of errors being sent anywhere receive on front end...jams up before being sent
+
     this.setState({ errors })
     
     return formIsValid

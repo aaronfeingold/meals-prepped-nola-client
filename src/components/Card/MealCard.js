@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 import DeleteMealButton from '../Buttons/DeleteMealButton.js'
+import EditMealButton from '../Buttons/EditMealButton'
 import MealDescription from './MealDescription.js'
 import MealFormContainer from '../../containers/MealFormContainer.js'
 import { setEditing } from '../../actions/mealsActions.js'
 import './card-style.css'
 
+// meal cards pass down handleEditing and onUpdateSubmit as props
 
 export class MealCard extends Component {
   constructor(props) {
@@ -65,7 +67,8 @@ export class MealCard extends Component {
             dailry={this.props.contains_dairy}
             />
           <DeleteMealButton  deleteMeal={this.props.deleteMeal} id={this.props.id}/>
-          <button className="btn btn-outline-info" onClick={this.handleEditing}> Edit </button>
+          {/* ok so if DeleteMeal is its own concer, why not Editing? */}
+          <EditMealButton handleEditing={this.handleEditing}/>
         </div>
       </div>
     );
