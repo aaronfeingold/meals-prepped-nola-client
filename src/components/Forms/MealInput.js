@@ -126,6 +126,7 @@ export class MealInput extends Component {
     if (!this.state.name) {
       formIsValid = false
       errors['name'] = '*Please enter a name for this meal'
+      document.querySelector('div.errorMsg').parentNode.scrollIntoView({ behavior: 'smooth' })
     }
     
     this.setState({ errors })

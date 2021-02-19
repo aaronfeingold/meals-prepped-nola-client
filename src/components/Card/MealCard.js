@@ -50,6 +50,9 @@ export class MealCard extends Component {
     return(
       <div className='card text-center shadow'>
         <div className="overflow">
+          {/* renders image not in the meal description component
+            why do that?? in order to fine tune the visuals of the meal description component in future prod...
+          */}
           <img src={this.props.imgsrc} alt={`${this.props.name}`} className="card-img-top"/>
         </div>
         <div className="card-body text-dark">
