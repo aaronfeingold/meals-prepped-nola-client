@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import WeeklyPlanCard from '../components/Card/WeeklyPlanCard.js'
 
 export class MealPlannerContainer extends Component {
 
@@ -7,15 +8,17 @@ export class MealPlannerContainer extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <div>
-          <h3>This will be the drag and drop section</h3>
+
+      return (
+        <div className="container">
+          <div>
+            <WeeklyPlanCard />
+          </div>
         </div>
-      </div>
-    )
-  }
+      )
+    }
 }
+
 
 export default MealPlannerContainer
 
