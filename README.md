@@ -1,18 +1,12 @@
 Kitchen Fatigue? Here's a solution to help prep meals for the week, brought to you by home cooks from New Orleans!
 
-
 About: This app was made with the intention of having direct access to a free meal recipe database.
 
-
-Please feel free to visit at: https://meals-prepped-nola.netlify.app/ and contribute, too, to the community of cooks spreading their knowledge. 
-
+Please feel free to visit at: https://meals-prepped-nola.netlify.app/ and contribute, too, to the community of cooks spreading their knowledge.
 
 Questions? Comments? Email ajfeingold88@gmail.com thanks
 
-
-
-
-FYI: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+FYI: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

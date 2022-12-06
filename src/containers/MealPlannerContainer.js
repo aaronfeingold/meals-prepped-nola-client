@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export class MealPlannerContainer extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -13,9 +12,8 @@ export class MealPlannerContainer extends Component {
           <h3>This will be the drag and drop section</h3>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default MealPlannerContainer
-
+export default MealPlannerContainer;

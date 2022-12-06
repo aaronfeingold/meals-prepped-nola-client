@@ -1,72 +1,78 @@
-import React, { Component } from 'react'
-import DeleteMealButton from '../Buttons/DeleteMealButton.js'
-import EditMealButton from '../Buttons/EditMealButton'
-import MealDescription from './MealDescription.js'
-import MealFormContainer from '../../containers/MealFormContainer.js'
-import './card-style.css'
+import React, { Component } from "react";
+import DeleteMealButton from "../Buttons/DeleteMealButton.js";
+import EditMealButton from "../Buttons/EditMealButton";
+import MealDescription from "./MealDescription.js";
+import MealFormContainer from "../../containers/MealFormContainer.js";
+import "./card-style.css";
 
 // meal cards pass down handleEditing and onUpdateSubmit as props
 // it can handle updating and submiting a patch
 export class MealCard extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      editing: false
-    }
+      editing: false,
+    };
   }
   handleEditing = () => {
-    let num = this.props.id
-    document.getElementById(num).scrollIntoView({ behavior: 'smooth' })
-    this.setState ({
-      editing: true
-    })
-  }
+    let num = this.props.id;
+    document.getElementById(num).scrollIntoView({ behavior: "smooth" });
+    this.setState({
+      editing: true,
+    });
+  };
   handleUpdateSubmit = () => {
-    let num = this.props.id
-    document.getElementById(num).scrollIntoView({ behavior: 'smooth' })
-    console.log('setting editing back to false')
-    this.setState ({
-      editing: false
-    })
-  }
+    let num = this.props.id;
+    document.getElementById(num).scrollIntoView({ behavior: "smooth" });
+    console.log("setting editing back to false");
+    this.setState({
+      editing: false,
+    });
+  };
   render() {
- 
     if (this.state.editing) {
       return (
-        <div className='card text-center shadow'>
-                < MealFormContainer
-                onUpdateSubmit={this.handleUpdateSubmit}
-                editing={this.state.editing}
-                name={this.props.name} 
-                category={this.props.category} 
-                description={this.props.description} 
-                image={this.props.imgsrc} 
-                vegan={this.props.vegan}
-                id={this.props.id}
-                />
+        <div className="card text-center shadow">
+          <MealFormContainer
+            onUpdateSubmit={this.handleUpdateSubmit}
+            editing={this.state.editing}
+            name={this.props.name}
+            category={this.props.category}
+            description={this.props.description}
+            image={this.props.imgsrc}
+            vegan={this.props.vegan}
+            id={this.props.id}
+          />
         </div>
-      )
+      );
     }
-    return(
-      <div className='card text-center shadow'>
+    return (
+      <div className="card text-center shadow">
         <div className="overflow">
           {/* renders image not in the meal description component
             why do that?? in order to fine tune the visuals of the meal description component in future prod...
           */}
-          <img src={this.props.imgsrc} alt={`${this.props.name}`} className="card-img-top"/>
+          <img
+            src={this.props.imgsrc}
+            alt={`${this.props.name}`}
+            className="card-img-top"
+          />
         </div>
         <div className="card-body text-dark">
-          <MealDescription 
+          <MealDescription
             name={this.props.name}
             category={this.props.category}
-            description={this.props.description} 
+            description={this.props.description}
             vegan={this.props.vegan}
             nuts={this.props.contains_nuts}
             dailry={this.props.contains_dairy}
-            />
-          <DeleteMealButton  deleteMeal={this.props.deleteMeal} id={this.props.id}/>
+          />
+          <DeleteMealButton
+            deleteMeal={this.props.deleteMeal}
+            id={this.props.id}
+          />
           {/* ok so if DeleteMeal is its own concer, why not Editing? */}
-          <EditMealButton handleEditing={this.handleEditing}/>
+          <EditMealButton handleEditing={this.handleEditing} />
         </div>
       </div>
     );
