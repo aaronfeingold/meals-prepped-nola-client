@@ -1,25 +1,16 @@
-// for development use:
-const BASE_URL = "http://localhost:3001";
-// for production use:
-// const BASE_URL = "https://meals-prepped-backend.herokuapp.com/";
+const BASE_URL = "https://meals-prepped-backend.herokuapp.com";
 
 const LOADING = { type: "LOADING" };
 
-const addMeal = (meal) => {
-  console.log('g')
-  return {
+const addMeal = (meal) => ({
       type: "ADD_MEAL",
       meal
-  }
-}
+});
 
-const updateMealCard = (updatedMeal) => {
-  console.log('g')
-  return{
+const updateMealCard = (updatedMeal) => ({
     type: "UPDATE_MEAL",
     updatedMeal
-  }
-}
+})
 
 const deleteMealFromMeals = (mealId) => {
   return {
@@ -40,9 +31,7 @@ export const fetchMeals = () => {
 }
 
 export const createMeal = (mealData, history) => {
-  console.log('b')
   return (dispatch) => {
-    console.log('c')
       fetch(BASE_URL + "/meals", {
           method: "POST",
           headers: {
@@ -57,14 +46,11 @@ export const createMeal = (mealData, history) => {
               dispatch(addMeal(meal));
               history.push('/meals');
           })
-        console.log('d')
   }
 }
 
 export const updateMeal = (mealId, tempMeal) => {
-  console.log('b')
   return (dispatch) => {
-    console.log('c')
       fetch(BASE_URL + "/meals/" + `${mealId}`, {
           method: "PATCH",
           headers: {
@@ -78,7 +64,6 @@ export const updateMeal = (mealId, tempMeal) => {
               console.log('f')
               dispatch(updateMealCard(updatedMeal));
           })
-        console.log('d')
   }
 
 }
