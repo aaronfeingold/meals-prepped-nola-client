@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { createMeal, updateMeal } from "../../actions/mealsActions.js";
 import MealFormUpdating from "./MealFormUpdating";
 import MealFormCreating from "./MealFormCreating";
-// This input is for meal creating and update. deletion is handled by deleteMealButton
 
 export class MealInput extends Component {
   constructor(props) {
@@ -19,6 +18,7 @@ export class MealInput extends Component {
       editing: props.editing || false,
     };
   }
+
   handleOnChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -26,16 +26,16 @@ export class MealInput extends Component {
   }
 
   handleOnSelect(e) {
-    if (this.state.vegan === false) {
-      this.setState({
-        vegan: true,
-      });
-    } else {
-      this.setState({
-        vegan: false,
-      });
+    e.preventDefault();
+    let update = true;
+    if (this.state.vegan === true) {
+      update = false;
     }
-  }
+
+    this.setState({
+      vegan: update,
+    });
+  };
 
   handleOnCreate = (e) => {
     e.preventDefault();
@@ -65,8 +65,9 @@ export class MealInput extends Component {
     }
   };
 
-  render() {
-    if (this.state.editing === true) {
+  toggleComponent = (isEditing) => {
+  this.handleOnUpdate.bind(this)
+    if (isEditing) {
       return (
         <MealFormUpdating
           handleOnUpdate={this.handleOnUpdate.bind(this)}
@@ -99,6 +100,10 @@ export class MealInput extends Component {
         />
       );
     }
+  };
+
+  render() {
+    return this.toggleComponent(this.state.editing);
   }
 
   validateForm = () => {
