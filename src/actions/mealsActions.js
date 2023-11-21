@@ -41,7 +41,6 @@ export const createMeal = (mealData, history) => {
     })
       .then((resp) => resp.json())
       .then((meal) => {
-        console.log("f");
         dispatch(addMeal(meal));
         history.push("/meals");
       });
@@ -60,7 +59,6 @@ export const updateMeal = (mealId, tempMeal) => {
     })
       .then((resp) => resp.json())
       .then((updatedMeal) => {
-        console.log("f");
         dispatch(updateMealCard(updatedMeal));
       });
   };

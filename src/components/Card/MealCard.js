@@ -24,7 +24,6 @@ export class MealCard extends Component {
   handleUpdateSubmit = () => {
     let num = this.props.id;
     document.getElementById(num).scrollIntoView({ behavior: "smooth" });
-    console.log("setting editing back to false");
     this.setState({
       editing: false,
     });
