@@ -17,13 +17,13 @@ export class MealInput extends Component {
       errors: {},
       editing: props.editing || false,
     };
-  }
+  };
 
   handleOnChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
-  }
+  };
 
   handleOnSelect(e) {
     e.preventDefault();
@@ -66,7 +66,7 @@ export class MealInput extends Component {
   };
 
   toggleComponent = (isEditing) => {
-  this.handleOnUpdate.bind(this)
+    this.handleOnUpdate.bind(this)
     if (isEditing) {
       return (
         <MealFormUpdating
