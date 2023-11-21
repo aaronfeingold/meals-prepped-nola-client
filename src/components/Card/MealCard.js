@@ -5,8 +5,6 @@ import MealDescription from "./MealDescription.js";
 import MealFormContainer from "../../containers/MealFormContainer.js";
 import "./card-style.css";
 
-// meal cards pass down handleEditing and onUpdateSubmit as props
-// it can handle updating and submiting a patch
 export class MealCard extends Component {
   constructor(props) {
     super(props);
